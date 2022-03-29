@@ -33,6 +33,8 @@ class ExerciseItemAdapter(
 
         holder.itemView.ivExerciseLook.setImageDrawable(ContextCompat.getDrawable(context, curLookItem))
 
+        holder.itemView.ivExerciseArea.setImageDrawable(ContextCompat.getDrawable(context, curAreaItem))
+
         holder.itemView.tvSingleExercise.setOnClickListener {
             // Create a dialog then have it pop up with sets and reps to input then save and cancel buttons
         }

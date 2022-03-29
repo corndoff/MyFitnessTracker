@@ -15,21 +15,21 @@ class ExerciseFragment : Fragment(R.layout.fragment_exercise) {
         super.onViewCreated(view, savedInstanceState)
 
         val exerciseList = listOf<String>(
-            "Biking",
-            "Home",
-            "Lifting Weights"
+            "Bicep Curls",
+            "Bench Press",
+            "Tricep Pulldown"
         )
 
         val areaList = listOf<Int>(
-            R.drawable.ic_exercises,
-            R.drawable.ic_home,
-            R.drawable.ic_workouts
+            R.drawable.bicep_workout,
+            R.drawable.bench_press_workout,
+            R.drawable.tricep_pulldown_workout
         )
 
         val workoutList = listOf<Int>(
-            1,
-            2,
-            3
+            R.drawable.bicep_area,
+            R.drawable.bench_press_area,
+            R.drawable.tricep_pulldown_area
         )
 
         val rvExercises = view.findViewById<RecyclerView>(R.id.rvExercises)
