@@ -13,7 +13,7 @@ import kotlinx.android.synthetic.main.fragment_exercise_item.view.*
 
 class ExerciseItemAdapter(
     var exerciseList: List<String>,
-    val lookList: List<Int>, // We need to pass the drawable ids in this list
+    val lookList: List<Int>,
     val areaList: List<Int>,
     val context: Context
 ): RecyclerView.Adapter<ExerciseItemAdapter.ExerciseItemHolder>() {

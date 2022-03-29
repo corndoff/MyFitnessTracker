@@ -9,6 +9,9 @@ import com.google.android.material.bottomnavigation.BottomNavigationMenuView
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class MainActivity : AppCompatActivity() {
+
+    private var loggedIn: Boolean = false
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -22,11 +25,6 @@ class MainActivity : AppCompatActivity() {
             replace(frag.id, homeFragment)
             commit()
         }
-
-
-
-
-
 
         val bottomNavigationView = findViewById<BottomNavigationView>(R.id.bottomNavigationView)
         bottomNavigationView.setOnItemSelectedListener {
@@ -48,5 +46,13 @@ class MainActivity : AppCompatActivity() {
             }
             true
         }
+    }
+
+    fun SetLoggedInToTrue(){
+        loggedIn = true
+    }
+
+    fun SetLoggedInToFalse(){
+        loggedIn = false
     }
 }

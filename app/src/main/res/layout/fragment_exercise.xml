@@ -6,12 +6,14 @@
     android:layout_height="match_parent"
     tools:context=".HomeFragment">
 
+
+
     <TextView
         android:id="@+id/tvHome"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Exercise Fragment"
         app:layout_constraintEnd_toEndOf="parent"
+        android:textSize="22sp"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -31,6 +33,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Excerise Name"
+        android:textSize="15sp"
         app:layout_constraintBottom_toTopOf="@+id/rvExercises"
         app:layout_constraintStart_toStartOf="parent" />
 
@@ -39,6 +42,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Workout Motion"
+        android:textSize="15sp"
         app:layout_constraintBottom_toTopOf="@+id/rvExercises"
         app:layout_constraintEnd_toStartOf="@+id/tvAreas"
         app:layout_constraintStart_toEndOf="@+id/tvName" />
@@ -47,8 +51,9 @@
         android:id="@+id/tvAreas"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="10dp"
+        android:layout_marginEnd="20dp"
         android:text="Workout Area"
+        android:textSize="15sp"
         app:layout_constraintBottom_toBottomOf="@+id/tvMotion"
         app:layout_constraintEnd_toEndOf="parent" />
 
