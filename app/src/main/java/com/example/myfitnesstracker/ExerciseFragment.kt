@@ -27,19 +27,19 @@ class ExerciseFragment : Fragment(R.layout.fragment_exercise) {
 
         tvHome.text = "Choose your Exercises for ${formatDate}"
 
-        val exerciseList = listOf<String>(
+        val exerciseList = listOf(
             "Bicep Curls",
             "Bench Press",
             "Tricep Pulldown"
         )
 
-        val areaList = listOf<Int>(
+        val areaList = listOf(
             R.drawable.bicep_workout,
             R.drawable.bench_press_workout,
             R.drawable.tricep_pulldown_workout
         )
 
-        val workoutList = listOf<Int>(
+        val workoutList = listOf(
             R.drawable.bicep_area,
             R.drawable.bench_press_area,
             R.drawable.tricep_pulldown_area
@@ -47,7 +47,7 @@ class ExerciseFragment : Fragment(R.layout.fragment_exercise) {
 
         val rvExercises = view.findViewById<RecyclerView>(R.id.rvExercises)
 
-        val adapter = ExerciseItemAdapter(exerciseList, areaList, workoutList, (activity as MainActivity))
+        val adapter = ExerciseItemAdapter(exerciseList, areaList, workoutList, (activity as MainActivity), parentFragmentManager)
         rvExercises.layoutManager = LinearLayoutManager(activity as MainActivity)
         rvExercises.adapter = adapter
     }

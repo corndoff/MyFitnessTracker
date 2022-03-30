@@ -7,15 +7,17 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.core.content.ContextCompat
+import androidx.fragment.app.FragmentManager
 import androidx.recyclerview.widget.RecyclerView
 import kotlinx.android.synthetic.main.fragment_exercise_item.*
 import kotlinx.android.synthetic.main.fragment_exercise_item.view.*
 
 class ExerciseItemAdapter(
     var exerciseList: List<String>,
-    val lookList: List<Int>,
-    val areaList: List<Int>,
-    val context: Context
+    private val lookList: List<Int>,
+    private val areaList: List<Int>,
+    val context: Context,
+    private val parentFragmentManager: FragmentManager
 ): RecyclerView.Adapter<ExerciseItemAdapter.ExerciseItemHolder>() {
     override fun onCreateViewHolder(
         parent: ViewGroup,
@@ -36,7 +38,8 @@ class ExerciseItemAdapter(
         holder.itemView.ivExerciseArea.setImageDrawable(ContextCompat.getDrawable(context, curAreaItem))
 
         holder.itemView.tvSingleExercise.setOnClickListener {
-            // Create a dialog then have it pop up with sets and reps to input then save and cancel buttons
+            val weightDialog = WeightsDialog()
+            weightDialog.show(parentFragmentManager, "Exercise Log")
         }
     }
 

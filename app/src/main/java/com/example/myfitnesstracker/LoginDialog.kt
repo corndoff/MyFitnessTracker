@@ -12,10 +12,10 @@ class LoginDialog(): DialogFragment(R.layout.dialog_login) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val btnSignIn = view.findViewById<Button>(R.id.btnSignIn)
+        val btnSignIn = view.findViewById<Button>(R.id.btnLog)
         val btnCancel = view.findViewById<Button>(R.id.btnCancel)
-        val etEmail = view.findViewById<EditText>(R.id.etEmail)
-        val etPassword = view.findViewById<EditText>(R.id.etPassword)
+        val etEmail = view.findViewById<EditText>(R.id.etSets)
+        val etPassword = view.findViewById<EditText>(R.id.etReps)
         val homeLoggedInFragment = HomeLoggedInFragment()
 
         btnSignIn.setOnClickListener {

@@ -35,7 +35,6 @@ class MainActivity : AppCompatActivity() {
                     if(!loggedIn) {
                         replace(frag.id, homeFragment)
                         commit()
-
                     }else {
                         replace(frag.id, homeLoggedInFragment)
                         commit()
