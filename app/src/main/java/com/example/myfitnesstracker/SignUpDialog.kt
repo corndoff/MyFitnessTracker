@@ -7,19 +7,21 @@ import android.widget.EditText
 import android.widget.Toast
 import androidx.fragment.app.DialogFragment
 
-class LoginDialog(): DialogFragment(R.layout.dialog_login) {
+class SignUpDialog(): DialogFragment(R.layout.dialog_signup) {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val btnSignIn = view.findViewById<Button>(R.id.btnSignIn)
-        val btnCancel = view.findViewById<Button>(R.id.btnCancel)
-        val etEmail = view.findViewById<EditText>(R.id.etEmail)
-        val etPassword = view.findViewById<EditText>(R.id.etPassword)
+        val btnNewCancel = view.findViewById<Button>(R.id.btnNewCancel)
+        val btnNewSignUp = view.findViewById<Button>(R.id.btnNewSignUp)
+        val etNewEmail = view.findViewById<EditText>(R.id.etNewEmail)
+        val etNewUserName = view.findViewById<EditText>(R.id.etNewUserName)
+        val etNewPassword = view.findViewById<EditText>(R.id.etNewPassword)
+
         val homeLoggedInFragment = HomeLoggedInFragment()
 
-        btnSignIn.setOnClickListener {
-            if(etEmail.text.isEmpty() || etPassword.text.isEmpty()){
+        btnNewSignUp.setOnClickListener {
+            if(etNewEmail.text.isEmpty() || etNewUserName.text.isEmpty() || etNewPassword.text.isEmpty()){
                 Toast.makeText(activity as MainActivity, "Must input your email and password", Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
             }
@@ -28,14 +30,12 @@ class LoginDialog(): DialogFragment(R.layout.dialog_login) {
                 replace(R.id.flFragment, homeLoggedInFragment)
                 commit()
                 (activity as MainActivity).SetLoggedInToTrue()
-                (activity as MainActivity).SetUserName(etEmail.text.toString())
-                Toast.makeText(activity as MainActivity, "Welcome back ${etEmail.text.toString()}", Toast.LENGTH_SHORT).show()
+                (activity as MainActivity).SetUserName(etNewUserName.text.toString())
+                Toast.makeText(activity as MainActivity, "Welcome ${etNewUserName.text.toString()}", Toast.LENGTH_SHORT).show()
             }
-
-
         }
 
-        btnCancel?.setOnClickListener {
+        btnNewCancel?.setOnClickListener {
             dismiss()
         }
 

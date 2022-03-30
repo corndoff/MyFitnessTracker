@@ -21,5 +21,9 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
             loginDialog.show(parentFragmentManager, "Login Window")
         }
 
+        btnSignUp.setOnClickListener {
+            val signUpDialog = SignUpDialog()
+            signUpDialog.show(parentFragmentManager, "Sign Up")
+        }
     }
 }

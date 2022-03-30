@@ -11,6 +11,7 @@ import com.google.android.material.bottomnavigation.BottomNavigationView
 class MainActivity : AppCompatActivity() {
 
     private var loggedIn: Boolean = false
+    private var userName: String = ""
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -20,6 +21,7 @@ class MainActivity : AppCompatActivity() {
         val homeFragment = HomeFragment()
         val exerciseFragment = ExerciseFragment()
         val workoutFragment = WorkoutFragment()
+        val homeLoggedInFragment = HomeLoggedInFragment()
 
         supportFragmentManager.beginTransaction().apply {
             replace(frag.id, homeFragment)
@@ -30,8 +32,14 @@ class MainActivity : AppCompatActivity() {
         bottomNavigationView.setOnItemSelectedListener {
             when(it.itemId) {
                 R.id.miHome -> supportFragmentManager.beginTransaction().apply {
-                    replace(frag.id, homeFragment)
-                    commit()
+                    if(!loggedIn) {
+                        replace(frag.id, homeFragment)
+                        commit()
+
+                    }else {
+                        replace(frag.id, homeLoggedInFragment)
+                        commit()
+                    }
                 }
 
                 R.id.miExercises -> supportFragmentManager.beginTransaction().apply {
@@ -54,5 +62,21 @@ class MainActivity : AppCompatActivity() {
 
     fun SetLoggedInToFalse(){
         loggedIn = false
+    }
+
+    fun SetUserName(user: String){
+        userName = user
+    }
+
+    fun ClearUserName(){
+        userName = ""
+    }
+
+    fun GetUserName(): String{
+        return userName
+    }
+
+    fun IsLoggedIn(): Boolean{
+        return loggedIn
     }
 }
